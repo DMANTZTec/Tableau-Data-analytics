@@ -7,8 +7,10 @@ def plot():
     import pandas_bokeh
     import pandas
     from bokeh.plotting import figure
-    data = pandas.read_excel("C:/Users/admin/Documents/Tableau Documentation/Data analytics with python/problems-2/PROBLEM 1.xlsx", parse_dates=["START DATE"])
+    data = pandas.read_excel("C:/Users/admin/Documents/Tableau Documentation/Data analytics with python/problems-2/PROBLEM 1.xlsx", 
+                parse_dates=["START DATE"])
     from bokeh.models import ColumnDataSource
+    from bokeh.palettes import Spectral6
     from bokeh.plotting import figure, show, output_file
     from bokeh.embed import components
     from bokeh.resources import CDN
@@ -29,7 +31,7 @@ def plot():
 
     source = ColumnDataSource(data=dict(s1=s1, s=s, color=colors))
 
-    p = figure(x_range=s1, y_range=(0,9), width=1200, height=450, title="Chart On Trainee",
+    p = figure(x_range=s1, y_range=(0,9), width=1080, height=450, title="Chart On Trainee",
             toolbar_location=None, tools="")
 
     p.vbar(x="s1", top="s",width=0.6, color="color", legend_field="s1", source=source)
@@ -40,24 +42,39 @@ def plot():
 
     # show(p)
 
-    # r = data.groupby(["SUBJECT"])["NO OF TASKS"].sum()
-    # r1 = r.index.tolist()
-    # source = ColumnDataSource(data=dict(r1=r1, r=r, color=colors))
+    r = data.groupby(["SUBJECT"])["NO OF TASKS"].sum()
 
-    # n = figure(x_range=r1, y_range=(0,15), width=1200, height=450, title="noOfTasks by subject",
-    #         toolbar_location=None, tools="")
+    r1 = r.index.tolist()
 
-    # n.vbar(x="r1", top="r",width=0.6, color="color", legend_field="r1", source=source)
+    source = ColumnDataSource(data=dict(r1=r1, r=r, color=Spectral6))
+
+    n = figure(x_range=r1, y_range=(0,15), width=650, height=370, title="noOfTasks by subject",
+            toolbar_location=None, tools="")
+
+    n.vbar(x="r1", top="r",width=0.6, color="color", legend_field="r1", source=source)
+
+    n.xgrid.grid_line_color = None
+    n.legend.orientation = "horizontal"
+    n.legend.location = "top_center"
 
     # show(n)
 
+    w = data.groupby(["TRAINEE"]).sum()
+    w1 = w.index.to_numpy()
+    w["names"] = w1
+    w
+
+    w2 = w.plot_bokeh.pie(x = "names", y = "SPEND HOURS", line_width =1, title = "spendHours of each trainee on course")
+    w2
+
     script1, div1 = components(p)
-    # script2, div2 = components(n)
+    script2, div2 = components(n)
+    script3, div3 = components(w2)
     cdn_js = CDN.js_files[0]
     # cdn_css = CDN.css_files[0]
     return render_template("plot.html",
-    script1 = script1, #(script2 = script2, div2 = div2) 
-    div1 = div1,
+    script1 = script1, script2 = script2, script3 = script3,
+    div1 = div1, div2 = div2, div3 = div3,
     # cdn_css = cdn_css,
     cdn_js = cdn_js)
 
