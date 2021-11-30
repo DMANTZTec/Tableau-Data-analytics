@@ -34,7 +34,7 @@ def plot():
 
     source = ColumnDataSource(data=dict(s1=s1, s=s, color=colors))
 
-    p = figure(x_range=s1, y_range=(0,9), width=1080, height=450, title="Chart On Trainee",
+    p = figure(x_range=s1, width=1080, height=450, title="Chart On Trainee",
             toolbar_location=None, tooltips="@s1: @s")
 
     p.vbar(x="s1", top="s",width=0.6, color="color", legend_field="s1", source=source)
@@ -51,7 +51,7 @@ def plot():
 
     source = ColumnDataSource(data=dict(r1=r1, r=r, color=Spectral6))
 
-    n = figure(x_range=r1, y_range=(0,15), width=650, height=370, title="noOfTasks by subject",
+    n = figure(x_range=r1, width=650, height=370, title="noOfTasks by subject",
             toolbar_location=None, tooltips="@r1: @r")
 
     n.vbar(x="r1", top="r",width=0.6, color="color", legend_field="r1", source=source)
