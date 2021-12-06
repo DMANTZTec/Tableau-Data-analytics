@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!--Declaration-->
+<html lang="en"> <!-- Define language in this element-->
+<head> <!--Head starts here-->
+<title>DMANTZ</title> <!--Title bar name-->
+
+<!--Seting up background image, table in the web page-->
+<!--setting properties of table td = tabledata, th = table header, tr =table row-->
+<style>
+    body {
+        background-image: url('Dmantz Logo.jpg');
+        background-repeat: no-repeat;   
+        background-attachment: inherit;
+        background-size: cover;
+         }
+    table {
+        font-family: 'Times New Roman', Times, serif;
+        width: 50%;
+        border: 1px solid white;
+       
+            }
+    td, th {
+        border: 1px solid #4f4f4f;
+        text-align: left;
+        padding: 8px;
+        background-color: coral;
+            }
+    tr :nth-child(even){
+        background-color: coral;
+        }
+
+</style>
+
+</head> <!--Head eneds here-->
+
+<body style="background-color: rgb(29, 235, 235)";>
+
+<!--Heading of the page we can use(h1-h6) and can customize size-->
+<h1 style="color: brown; font-size: 50px; font-family: 'Times New Roman', Times, serif;font-style: unset; 
+text-align: center; padding: 2px;padding-top: 0ch;">
+  
+DMANTZ Technologies Pvt Limited
+
+</h1>
+
+<!--For Horizontal line(rule)-->
+
+<hr size="2px" color="brown">  
+
+<h2 style="color: brown;">Welcome to DMANTZ Technologies Pvt Limited, Nalgonda</h2>
+
+<!--Entering table data-->
+    <table>
+        <caption><strong>Table</strong></caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th style="width: 20%;">Address</th>
+        </tr>
+        <tr>
+            <td>Naresh</td>
+            <td>27</td>
+            <td>NLG</td>
+        </tr>
+        <tr>
+            <td>Giri</td>
+            <td>25</td>
+            <td>NLG</td>
+        </tr>
+        <tr>
+            <td>Swapna</td>
+            <td>28</td>
+            <td>NLG</td>
+        </tr>
+    </table>
+
+    <!--Creating paragrah-->
+<p style="padding: 15px;"> <!--Paragragh starts here-->
+
+    <strong style="color: purple; font-size: 28px;">Services Providing:</strong> <br><br> 1. WEB UI 
+    <br>2. Enterprise Services <br>3. Databases <br>4. Mobile Apps <br>5. BI Analytics 
+    <br>6. Dev OPS <br>7. Cloud Tech <br> <abbr title="Internet of things"> 8. IoT </abbr><br>
+    9. Machine Learning <br><!--For double quotes-->
+    <cite>Thanks</cite> <br><br>
+    <q>Click on bellow button</q>
+
+</p> <!--Paragragh ends here-->
+
+<!--Creating a button with link-->
+
+<button onclick="https://dmantz.com/">Dmantz</button><br><br>
+
+<!--For herf is for inserting hyper links, and title is for tooltip, href is attribute and <a> is tag -->
+
+<a href = "https://dmantz.com/" title="Click here" target="_blank">Official website <br><br>
+    <img src="Dmantz Logo.jpg" alt = "Dmantz" style = "width:200px;height:100px;">
+    
+</a> 
+
+
+
+<!---For inserting image and identifying objects in it and taking to url using map-->
+<img src = "workplace.jpg"  alt = "desktop" usemap = #workmap> 
+<map name = #workmap>
+    <area shape="rect" coords="34, 44, 270, 350" alt="computer image" title="Laptop" href="https://www.google.com/search?q=laptop&sxsrf=AOaemvLtbMZfrb-u0EBhUZB-4YuHBNwZrA%3A1631293919945&ei=35E7YdiXOeSf4-EPl92iQA&oq=lap&gs_lp=Egdnd3Mtd2l6uAED-AEBKgIIADIHEAAYsQMYQzIEEAAYQzIKEAAYsQMYyQMYQzIFEAAYkgMyBBAAGEMyBBAAGEMyBBAAGEMyBxAAGLEDGEMyBBAAGEMyBBAAGEPCAgcQIxiwAxgnwgIHEAAYRxiwA8ICBxAAGLADGEPCAgQQIxgnwgILEC4YgAQYxwEYowLCAggQLhiABBixA8ICBRAAGIAEwgIOEC4YgAQYsQMYxwEY0QOQBgpIq8UCUJm1AljZtwJwAXgCyAEAkAEAmAHYA6ABzQaqAQkwLjEuMS4wLjHiAwQgQRgAiAYB&sclient=gws-wiz" target = "_blank">
+    <area shape="rect" coords="290,172,333,250" alt="computer image" title="Phone" href="https://www.google.com/search?q=phone&ei=npI7YbnvE4Xf9QPNiLGgDA&oq=phone&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAELEDEEMyDgguEIAEELEDEMcBENEDMgQIABBDMggIABCABBCxAzIFCAAQgAQyCAgAEIAEELEDMggIABCABBCxAzILCAAQgAQQsQMQgwEyBQgAEIAEMggIABCABBCxAzoNCC4QxwEQ0QMQQxCTAjoECC4QQzoHCC4QQxCTAjoHCAAQyQMQQ0oECEEYAFCa8ARYofkEYMn8BGgAcAJ4AIABggiIAd8RkgEJNC0xLjAuMS4xmAEAoAEBwAEB&sclient=gws-wiz&ved=0ahUKEwi5tuGP9PTyAhWFb30KHU1EDMQQ4dUDCA4&uact=5" target = "_blank">
+    <area shape="circle" coords="337,300,44" alt="computer image" title = "cofee" href="https://www.google.com/search?q=coffee&oq=coffee&aqs=chrome..69i57j0i271l3.5586j0j7&sourceid=chrome&ie=UTF-8" target="_blank" onclick="myFunction()">
+</map>
+
+<!--Java script for alert in the page calling coffe site-->
+<script>
+    function myFunction()
+    {
+        alert("You clicked on the cofee");
+    }
+</script>
+
+<address>
+<strong>Adress:</strong><br>
+DMANTZ Technologies<br>
+Visit us at: Nalgonda <br>
+<a href= chnaresh632@gmail.com>Email@chnaresh632@gmail.com</a><br>
+Telangana, Nalgonda <br>
+<cite>Thanks</cite> <br>
+</address>
+
+</body>
+
+</html>

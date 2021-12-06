@@ -1,0 +1,43 @@
+{%extends "home.html"%}
+{%block content%}
+
+<div>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+        <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+            <!-- This chart contain about no of tasks completed or covered by a subject</p>  -->
+        {{script1 | safe}}
+        {{div1 | safe}}
+</div>
+
+<div style="display: flex;flex-direction: row;  align-items:stretch;"> 
+    <div>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+        <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+            <!-- This chart contain about no of tasks completed or covered by a each trainee</p> -->
+        {{script2 | safe}}
+        {{div2 | safe}}
+    </div>
+
+    <div>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+            <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+                <!-- This chart contain spendHours of each trainee on course</p>  -->
+            {{script3 | safe}}
+            {{div3 | safe}}
+    </div>
+
+
+</div>
+
+
+
+<div>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+        <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+            <!-- This chart contain spendHours of each trainee on course</p>  -->
+        {{script4 | safe}}
+        {{div4 | safe}}
+    </div>
+
+
+{%endblock content%}

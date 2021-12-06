@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title> HOME DMANTZ </title>
+    </head>
+</html>
+    <body>
+        <div class="container">
+            <h1 style="text-align:center;background-color: #ec540d;height: 50px;width: 100%;opacity: .9;font-size: 37px;padding: 13px;"> 
+                Dmantz Technologies Private Limited </h1>
+            <!-- <p style="font-size: 20px; text-align:center; color: rgb(255, 0, 98);">Expore the software vision</p> -->
+                <ul class="menu"><li style="font-size: 20px;"><a href="{{ url_for('home') }}">Home</a></li>
+                                <li style="font-size: 20px;"><a href="{{ url_for('plot') }}">Plot</a></li></ul>
+
+            <div class="container">
+                {%block content%} 
+                {%endblock%}
+            </div>        
+        </div>
+    </body>
