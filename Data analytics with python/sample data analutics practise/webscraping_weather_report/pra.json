@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HOME DMANTZ </title>
+    </head>
+</html>
+    <body>
+        <strong><nav style="background-color: rgb(240, 236, 229);">
+        <div>
+            <div style="height: 65px; align-items:center;">
+                <h1 style="text-align:left; align-items:center; color: rgb(7, 118, 245); display: flex;flex-direction:row; justify-content:space-between;width: 95%;font-size: 25px; padding: 9px"> 
+                    Dmantz Technologies Private Limited 
+                    <div style="display: flex;flex-direction:row;">
+                        <ul style="font-size: 20px"><a href="/" style="margin-right: 20px;">Home</a></ul>
+                        <ul style="font-size: 20px;"><a href="/plot/" >Plot</a></ul>  
+                    </div>
+                </h1>
+            </div>
+            <!-- <p style="font-size: 20px; text-align:center; color: rgb(255, 0, 98);">Expore the software vision</p> -->
+                <!-- <ul class="menu"><li style="font-size: 20px;"><a href="/">Home</a></li>
+                                <li style="font-size: 20px;"><a href="/plot/">Plot</a></li></ul> -->
+        </div>
+        </strong></nav>
+            <div>
+                
+
+<div style="margin-bottom:70px; padding: 30px; display: flex;flex-direction: row; justify-content:space-between;">
+    <div>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+            <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+                <!-- This chart contain about no of tasks completed or covered by a subject</p>  -->
+            
+<script type="text/javascript">
+    (function() {
+          const fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  
+                const docs_json = '{
+                        "784838bb-1d3e-4254-9cd3-3db9e79d03c2": {
+                            "defs": [],
+                            "roots": {
+                                "references": [
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1035"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1036"
+                                            },
+                                            "ticker": {
+                                                "id": "1015"
+                                            }
+                                        },
+                                        "id": "1014",
+                                        "type": "CategoricalAxis"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "factors": [
+                                                "GitHub",
+                                                "HTML",
+                                                "MySql",
+                                                "Python",
+                                                "React",
+                                                "kafka"
+                                            ]
+                                        },
+                                        "id": "1006",
+                                        "type": "FactorRange"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "items": [
+                                                {
+                                                    "id": "1040"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1039",
+                                        "type": "Legend"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "callback": null,
+                                            "tooltips": "@n2, @n3: @n4 tasks"
+                                        },
+                                        "id": "1021",
+                                        "type": "HoverTool"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1017"
+                                            },
+                                            "coordinates": null,
+                                            "dimension": 1,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1020",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "below": [
+                                                {
+                                                    "id": "1014"
+                                                }
+                                            ],
+                                            "center": [
+                                                {
+                                                    "id": "1016"
+                                                },
+                                                {
+                                                    "id": "1020"
+                                                },
+                                                {
+                                                    "id": "1039"
+                                                }
+                                            ],
+                                            "left": [
+                                                {
+                                                    "id": "1017"
+                                                }
+                                            ],
+                                            "renderers": [
+                                                {
+                                                    "id": "1028"
+                                                }
+                                            ],
+                                            "title": {
+                                                "id": "1004"
+                                            },
+                                            "toolbar": {
+                                                "id": "1022"
+                                            },
+                                            "toolbar_location": null,
+                                            "width": 650,
+                                            "x_range": {
+                                                "id": "1006"
+                                            },
+                                            "x_scale": {
+                                                "id": "1010"
+                                            },
+                                            "y_range": {
+                                                "id": "1008"
+                                            },
+                                            "y_scale": {
+                                                "id": "1012"
+                                            }
+                                        },
+                                        "id": "1003",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1018",
+                                        "type": "BasicTicker"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1008",
+                                        "type": "DataRange1d"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "source": {
+                                                "id": "1002"
+                                            }
+                                        },
+                                        "id": "1029",
+                                        "type": "CDSView"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1012",
+                                        "type": "LinearScale"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1035",
+                                        "type": "CategoricalTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1038",
+                                        "type": "Selection"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "n4"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "n2"
+                                            }
+                                        },
+                                        "id": "1025",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "text": "noOTasks by Subject,by Naresh"
+                                        },
+                                        "id": "1004",
+                                        "type": "Title"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1032",
+                                        "type": "BasicTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "label": {
+                                                "field": "n2"
+                                            },
+                                            "renderers": [
+                                                {
+                                                    "id": "1028"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1040",
+                                        "type": "LegendItem"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "data": {
+                                                "color": [
+                                                    "#3288bd",
+                                                    "#99d594",
+                                                    "#e6f598",
+                                                    "#fee08b",
+                                                    "#fc8d59",
+                                                    "#d53e4f"
+                                                ],
+                                                "n2": [
+                                                    "GitHub",
+                                                    "HTML",
+                                                    "MySql",
+                                                    "Python",
+                                                    "React",
+                                                    "kafka"
+                                                ],
+                                                "n3": [
+                                                    "Naresh Chepuroju",
+                                                    "Naresh Chepuroju",
+                                                    "Naresh Chepuroju",
+                                                    "Naresh Chepuroju",
+                                                    "Naresh Chepuroju",
+                                                    "Naresh Chepuroju"
+                                                ],
+                                                "n4": [
+                                                    1,
+                                                    2,
+                                                    1,
+                                                    51,
+                                                    7,
+                                                    33
+                                                ]
+                                            },
+                                            "selected": {
+                                                "id": "1038"
+                                            },
+                                            "selection_policy": {
+                                                "id": "1037"
+                                            }
+                                        },
+                                        "id": "1002",
+                                        "type": "ColumnDataSource"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1033",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1015",
+                                        "type": "CategoricalTicker"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1036",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "data_source": {
+                                                "id": "1002"
+                                            },
+                                            "glyph": {
+                                                "id": "1025"
+                                            },
+                                            "group": null,
+                                            "hover_glyph": null,
+                                            "muted_glyph": {
+                                                "id": "1027"
+                                            },
+                                            "nonselection_glyph": {
+                                                "id": "1026"
+                                            },
+                                            "view": {
+                                                "id": "1029"
+                                            }
+                                        },
+                                        "id": "1028",
+                                        "type": "GlyphRenderer"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1014"
+                                            },
+                                            "coordinates": null,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1016",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "n4"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "n2"
+                                            }
+                                        },
+                                        "id": "1026",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1010",
+                                        "type": "CategoricalScale"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "tools": [
+                                                {
+                                                    "id": "1021"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1022",
+                                        "type": "Toolbar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "n4"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "n2"
+                                            }
+                                        },
+                                        "id": "1027",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1037",
+                                        "type": "UnionRenderers"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1032"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1033"
+                                            },
+                                            "ticker": {
+                                                "id": "1018"
+                                            }
+                                        },
+                                        "id": "1017",
+                                        "type": "LinearAxis"
+                                    }
+                                ],
+                                "root_ids": [
+                                    "1003"
+                                ]
+                            },
+                            "title": "Bokeh Application",
+                            "version": "2.4.0"
+                        }
+                    }';
+                const render_items = [
+                        {
+                            "docid": "784838bb-1d3e-4254-9cd3-3db9e79d03c2",
+                            "root_ids": [
+                                "1003"
+                            ],
+                            "roots": {
+                                "1003": "1a9ff114-3831-4231-a75b-ba915d4b9f1e"
+                            }
+                        }
+                    ];
+                root.Bokeh.embed.embed_items(docs_json, render_items);
+                }
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  let attempts = 0;
+                  const timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      clearInterval(timer);
+                      embed_document(root);
+                        } else {
+                      attempts++;
+                      if (attempts > 100) {
+                        clearInterval(timer);
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                            }
+                        }
+                    },
+                    10, root)
+                }
+            })(window);
+        });
+    };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+})();
+</script>
+            
+<div class="bk-root" id="1a9ff114-3831-4231-a75b-ba915d4b9f1e" data-root-id="1003"></div>
+    </div>
+    <div>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+            <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;">
+                This chart contain spendHours of each trainee on course</p> 
+            
+<script type="text/javascript">
+    (function() {
+          const fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  
+                const docs_json = '{
+                        "0cf07432-a912-4154-be70-17e783d9fc13": {
+                            "defs": [],
+                            "roots": {
+                                "references": [
+                                    {
+                                        "attributes": {
+                                            "end_angle": {
+                                                "expr": {
+                                                    "id": "1064"
+                                                }
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "line_color": {
+                                                "value": "white"
+                                            },
+                                            "radius": {
+                                                "value": 0.4
+                                            },
+                                            "start_angle": {
+                                                "expr": {
+                                                    "id": "1063"
+                                                }
+                                            },
+                                            "x": {
+                                                "value": 0
+                                            },
+                                            "y": {
+                                                "value": 1
+                                            }
+                                        },
+                                        "id": "1067",
+                                        "type": "Wedge"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1052"
+                                            },
+                                            "coordinates": null,
+                                            "grid_line_color": null,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1055",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1077",
+                                        "type": "BasicTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "start": -0.5
+                                        },
+                                        "id": "1044",
+                                        "type": "Range1d"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "text": "Pie Chart"
+                                        },
+                                        "id": "1042",
+                                        "type": "Title"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1075",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "field": "angle",
+                                            "include_zero": true
+                                        },
+                                        "id": "1063",
+                                        "type": "CumSum"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1080",
+                                        "type": "Selection"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1057",
+                                        "type": "BasicTicker"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1074"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1075"
+                                            },
+                                            "ticker": {
+                                                "id": "1057"
+                                            },
+                                            "visible": false
+                                        },
+                                        "id": "1056",
+                                        "type": "LinearAxis"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "data_source": {
+                                                "id": "1065"
+                                            },
+                                            "glyph": {
+                                                "id": "1067"
+                                            },
+                                            "group": null,
+                                            "hover_glyph": null,
+                                            "muted_glyph": {
+                                                "id": "1069"
+                                            },
+                                            "nonselection_glyph": {
+                                                "id": "1068"
+                                            },
+                                            "view": {
+                                                "id": "1071"
+                                            }
+                                        },
+                                        "id": "1070",
+                                        "type": "GlyphRenderer"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "source": {
+                                                "id": "1065"
+                                            }
+                                        },
+                                        "id": "1071",
+                                        "type": "CDSView"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1079",
+                                        "type": "UnionRenderers"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1056"
+                                            },
+                                            "coordinates": null,
+                                            "dimension": 1,
+                                            "grid_line_color": null,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1059",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "data": {
+                                                "Trainees": [
+                                                    "Amulya Madupoju",
+                                                    "Giridhar Yerra",
+                                                    "KORUKONDA HARISH",
+                                                    "Mamatha Tekumatla",
+                                                    "Naresh Chepuroju",
+                                                    "Swapna Koyagura",
+                                                    "Vamshi Bhairoju",
+                                                    "valisetti suresh"
+                                                ],
+                                                "angle": {
+                                                    "__ndarray__": "RpdjhSK/3z+kGyoVgWzuP7uofcScdOo/6cIkI9SE8j/pwiQj1ITSP3WxCuRZz+c/jD5ek3XX4z+7gEHbJC7zPw==",
+                                                    "dtype": "float64",
+                                                    "order": "little",
+                                                    "shape": [
+                                                        8
+                                                    ]
+                                                },
+                                                "color": [
+                                                    "red",
+                                                    "blue",
+                                                    "pink",
+                                                    "orange",
+                                                    "purple",
+                                                    "green",
+                                                    "violet",
+                                                    "yellow"
+                                                ],
+                                                "index": [
+                                                    0,
+                                                    1,
+                                                    2,
+                                                    3,
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7
+                                                ],
+                                                "value": [
+                                                    12,
+                                                    23,
+                                                    20,
+                                                    28,
+                                                    7,
+                                                    18,
+                                                    15,
+                                                    29
+                                                ]
+                                            },
+                                            "selected": {
+                                                "id": "1080"
+                                            },
+                                            "selection_policy": {
+                                                "id": "1079"
+                                            }
+                                        },
+                                        "id": "1065",
+                                        "type": "ColumnDataSource"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1074",
+                                        "type": "BasicTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1078",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "end_angle": {
+                                                "expr": {
+                                                    "id": "1064"
+                                                }
+                                            },
+                                            "fill_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "line_color": {
+                                                "value": "white"
+                                            },
+                                            "radius": {
+                                                "value": 0.4
+                                            },
+                                            "start_angle": {
+                                                "expr": {
+                                                    "id": "1063"
+                                                }
+                                            },
+                                            "x": {
+                                                "value": 0
+                                            },
+                                            "y": {
+                                                "value": 1
+                                            }
+                                        },
+                                        "id": "1069",
+                                        "type": "Wedge"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1077"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1078"
+                                            },
+                                            "ticker": {
+                                                "id": "1053"
+                                            },
+                                            "visible": false
+                                        },
+                                        "id": "1052",
+                                        "type": "LinearAxis"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "end_angle": {
+                                                "expr": {
+                                                    "id": "1064"
+                                                }
+                                            },
+                                            "fill_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "line_color": {
+                                                "value": "white"
+                                            },
+                                            "radius": {
+                                                "value": 0.4
+                                            },
+                                            "start_angle": {
+                                                "expr": {
+                                                    "id": "1063"
+                                                }
+                                            },
+                                            "x": {
+                                                "value": 0
+                                            },
+                                            "y": {
+                                                "value": 1
+                                            }
+                                        },
+                                        "id": "1068",
+                                        "type": "Wedge"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1050",
+                                        "type": "LinearScale"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "callback": null,
+                                            "tooltips": "@Trainees: @value Hrs"
+                                        },
+                                        "id": "1060",
+                                        "type": "HoverTool"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "label": {
+                                                "field": "Trainees"
+                                            },
+                                            "renderers": [
+                                                {
+                                                    "id": "1070"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1082",
+                                        "type": "LegendItem"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "tools": [
+                                                {
+                                                    "id": "1060"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1061",
+                                        "type": "Toolbar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "below": [
+                                                {
+                                                    "id": "1052"
+                                                }
+                                            ],
+                                            "center": [
+                                                {
+                                                    "id": "1055"
+                                                },
+                                                {
+                                                    "id": "1059"
+                                                },
+                                                {
+                                                    "id": "1081"
+                                                }
+                                            ],
+                                            "height": 470,
+                                            "left": [
+                                                {
+                                                    "id": "1056"
+                                                }
+                                            ],
+                                            "renderers": [
+                                                {
+                                                    "id": "1070"
+                                                }
+                                            ],
+                                            "title": {
+                                                "id": "1042"
+                                            },
+                                            "toolbar": {
+                                                "id": "1061"
+                                            },
+                                            "toolbar_location": null,
+                                            "x_range": {
+                                                "id": "1044"
+                                            },
+                                            "x_scale": {
+                                                "id": "1048"
+                                            },
+                                            "y_range": {
+                                                "id": "1046"
+                                            },
+                                            "y_scale": {
+                                                "id": "1050"
+                                            }
+                                        },
+                                        "id": "1041",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "field": "angle"
+                                        },
+                                        "id": "1064",
+                                        "type": "CumSum"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "items": [
+                                                {
+                                                    "id": "1082"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1081",
+                                        "type": "Legend"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1046",
+                                        "type": "DataRange1d"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1053",
+                                        "type": "BasicTicker"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1048",
+                                        "type": "LinearScale"
+                                    }
+                                ],
+                                "root_ids": [
+                                    "1041"
+                                ]
+                            },
+                            "title": "Bokeh Application",
+                            "version": "2.4.0"
+                        }
+                    }';
+                const render_items = [
+                        {
+                            "docid": "0cf07432-a912-4154-be70-17e783d9fc13",
+                            "root_ids": [
+                                "1041"
+                            ],
+                            "roots": {
+                                "1041": "75f2bb7c-b938-4443-930d-b9c50d82cce9"
+                            }
+                        }
+                    ];
+                root.Bokeh.embed.embed_items(docs_json, render_items);
+                }
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  let attempts = 0;
+                  const timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      clearInterval(timer);
+                      embed_document(root);
+                        } else {
+                      attempts++;
+                      if (attempts > 100) {
+                        clearInterval(timer);
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                            }
+                        }
+                    },
+                    10, root)
+                }
+            })(window);
+        });
+    };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+})();
+</script>
+            
+<div class="bk-root" id="75f2bb7c-b938-4443-930d-b9c50d82cce9" data-root-id="1041"></div>
+    </div>
+</div>
+
+<div style="display: flex;flex-direction: row;  justify-content:space-evenly;"> 
+    <div>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+        <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+            <!-- This chart contain about no of tasks completed or covered by a each trainee</p> -->
+        
+<script type="text/javascript">
+    (function() {
+          const fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  
+                const docs_json = '{
+                        "91cbf212-0bf5-4fee-8273-9ce559152542": {
+                            "defs": [],
+                            "roots": {
+                                "references": [
+                                    {
+                                        "attributes": {},
+                                        "id": "1093",
+                                        "type": "LinearScale"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1118",
+                                        "type": "UnionRenderers"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "text": "noOfTasks of Swapna in 10th month"
+                                        },
+                                        "id": "1085",
+                                        "type": "Title"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1116"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1117"
+                                            },
+                                            "ticker": {
+                                                "id": "1096"
+                                            }
+                                        },
+                                        "id": "1095",
+                                        "type": "CategoricalAxis"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1119",
+                                        "type": "Selection"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1096",
+                                        "type": "CategoricalTicker"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "tools": [
+                                                {
+                                                    "id": "1102"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1103",
+                                        "type": "Toolbar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1113",
+                                        "type": "BasicTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1091",
+                                        "type": "CategoricalScale"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "items": [
+                                                {
+                                                    "id": "1121"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1120",
+                                        "type": "Legend"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1113"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1114"
+                                            },
+                                            "ticker": {
+                                                "id": "1099"
+                                            }
+                                        },
+                                        "id": "1098",
+                                        "type": "LinearAxis"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "data": {
+                                                "color": [
+                                                    "#3288bd",
+                                                    "#99d594",
+                                                    "#e6f598",
+                                                    "#fee08b",
+                                                    "#fc8d59",
+                                                    "#d53e4f"
+                                                ],
+                                                "u": [
+                                                    9,
+                                                    3,
+                                                    3
+                                                ],
+                                                "u1": [
+                                                    "HTML&amp;CSS",
+                                                    "Mysql",
+                                                    "Spring"
+                                                ]
+                                            },
+                                            "selected": {
+                                                "id": "1119"
+                                            },
+                                            "selection_policy": {
+                                                "id": "1118"
+                                            }
+                                        },
+                                        "id": "1083",
+                                        "type": "ColumnDataSource"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1095"
+                                            },
+                                            "coordinates": null,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1097",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1114",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "below": [
+                                                {
+                                                    "id": "1095"
+                                                }
+                                            ],
+                                            "center": [
+                                                {
+                                                    "id": "1097"
+                                                },
+                                                {
+                                                    "id": "1101"
+                                                },
+                                                {
+                                                    "id": "1120"
+                                                }
+                                            ],
+                                            "height": 340,
+                                            "left": [
+                                                {
+                                                    "id": "1098"
+                                                }
+                                            ],
+                                            "renderers": [
+                                                {
+                                                    "id": "1109"
+                                                }
+                                            ],
+                                            "title": {
+                                                "id": "1085"
+                                            },
+                                            "toolbar": {
+                                                "id": "1103"
+                                            },
+                                            "toolbar_location": null,
+                                            "width": 430,
+                                            "x_range": {
+                                                "id": "1087"
+                                            },
+                                            "x_scale": {
+                                                "id": "1091"
+                                            },
+                                            "y_range": {
+                                                "id": "1089"
+                                            },
+                                            "y_scale": {
+                                                "id": "1093"
+                                            }
+                                        },
+                                        "id": "1084",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "label": {
+                                                "field": "u1"
+                                            },
+                                            "renderers": [
+                                                {
+                                                    "id": "1109"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1121",
+                                        "type": "LegendItem"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1098"
+                                            },
+                                            "coordinates": null,
+                                            "dimension": 1,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1101",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1099",
+                                        "type": "BasicTicker"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "data_source": {
+                                                "id": "1083"
+                                            },
+                                            "glyph": {
+                                                "id": "1106"
+                                            },
+                                            "group": null,
+                                            "hover_glyph": null,
+                                            "muted_glyph": {
+                                                "id": "1108"
+                                            },
+                                            "nonselection_glyph": {
+                                                "id": "1107"
+                                            },
+                                            "view": {
+                                                "id": "1110"
+                                            }
+                                        },
+                                        "id": "1109",
+                                        "type": "GlyphRenderer"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1116",
+                                        "type": "CategoricalTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "u"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "u1"
+                                            }
+                                        },
+                                        "id": "1107",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "u"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "u1"
+                                            }
+                                        },
+                                        "id": "1106",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "factors": [
+                                                "HTML&amp;CSS",
+                                                "Mysql",
+                                                "Spring"
+                                            ]
+                                        },
+                                        "id": "1087",
+                                        "type": "FactorRange"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1117",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "callback": null,
+                                            "tooltips": "@u1: @u Tasks"
+                                        },
+                                        "id": "1102",
+                                        "type": "HoverTool"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "source": {
+                                                "id": "1083"
+                                            }
+                                        },
+                                        "id": "1110",
+                                        "type": "CDSView"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "u"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "u1"
+                                            }
+                                        },
+                                        "id": "1108",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1089",
+                                        "type": "DataRange1d"
+                                    }
+                                ],
+                                "root_ids": [
+                                    "1084"
+                                ]
+                            },
+                            "title": "Bokeh Application",
+                            "version": "2.4.0"
+                        }
+                    }';
+                const render_items = [
+                        {
+                            "docid": "91cbf212-0bf5-4fee-8273-9ce559152542",
+                            "root_ids": [
+                                "1084"
+                            ],
+                            "roots": {
+                                "1084": "2c55682c-93c6-47bd-a57f-8c21cb7e48df"
+                            }
+                        }
+                    ];
+                root.Bokeh.embed.embed_items(docs_json, render_items);
+                }
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  let attempts = 0;
+                  const timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      clearInterval(timer);
+                      embed_document(root);
+                        } else {
+                      attempts++;
+                      if (attempts > 100) {
+                        clearInterval(timer);
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                            }
+                        }
+                    },
+                    10, root)
+                }
+            })(window);
+        });
+    };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+})();
+</script>
+        
+<div class="bk-root" id="2c55682c-93c6-47bd-a57f-8c21cb7e48df" data-root-id="1084"></div>
+    </div>
+
+    <div>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+            <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+                <!-- This chart contain spendHours of each trainee on course</p>  -->
+            
+<script type="text/javascript">
+    (function() {
+          const fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  
+                const docs_json = '{
+                        "834c3420-9986-491b-9a22-5a78809ac9fa": {
+                            "defs": [],
+                            "roots": {
+                                "references": [
+                                    {
+                                        "attributes": {
+                                            "below": [
+                                                {
+                                                    "id": "1134"
+                                                }
+                                            ],
+                                            "center": [
+                                                {
+                                                    "id": "1136"
+                                                },
+                                                {
+                                                    "id": "1140"
+                                                },
+                                                {
+                                                    "id": "1159"
+                                                }
+                                            ],
+                                            "height": 340,
+                                            "left": [
+                                                {
+                                                    "id": "1137"
+                                                }
+                                            ],
+                                            "renderers": [
+                                                {
+                                                    "id": "1148"
+                                                }
+                                            ],
+                                            "title": {
+                                                "id": "1124"
+                                            },
+                                            "toolbar": {
+                                                "id": "1142"
+                                            },
+                                            "toolbar_location": null,
+                                            "width": 430,
+                                            "x_range": {
+                                                "id": "1126"
+                                            },
+                                            "x_scale": {
+                                                "id": "1130"
+                                            },
+                                            "y_range": {
+                                                "id": "1128"
+                                            },
+                                            "y_scale": {
+                                                "id": "1132"
+                                            }
+                                        },
+                                        "id": "1123",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "callback": null,
+                                            "tooltips": "@e1: @e Tasks"
+                                        },
+                                        "id": "1141",
+                                        "type": "HoverTool"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1157",
+                                        "type": "UnionRenderers"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "label": {
+                                                "field": "e1"
+                                            },
+                                            "renderers": [
+                                                {
+                                                    "id": "1148"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1160",
+                                        "type": "LegendItem"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1128",
+                                        "type": "DataRange1d"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "items": [
+                                                {
+                                                    "id": "1160"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1159",
+                                        "type": "Legend"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1158",
+                                        "type": "Selection"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1132",
+                                        "type": "LinearScale"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "factors": [
+                                                "HTML/CSS",
+                                                "MySQL",
+                                                "SPRINGBOOT"
+                                            ]
+                                        },
+                                        "id": "1126",
+                                        "type": "FactorRange"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1153",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "text": "noOfTasks of Amulya in 10th month"
+                                        },
+                                        "id": "1124",
+                                        "type": "Title"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1155",
+                                        "type": "CategoricalTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1155"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1156"
+                                            },
+                                            "ticker": {
+                                                "id": "1135"
+                                            }
+                                        },
+                                        "id": "1134",
+                                        "type": "CategoricalAxis"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "e"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "e1"
+                                            }
+                                        },
+                                        "id": "1147",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "e"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "e1"
+                                            }
+                                        },
+                                        "id": "1146",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1135",
+                                        "type": "CategoricalTicker"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "tools": [
+                                                {
+                                                    "id": "1141"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1142",
+                                        "type": "Toolbar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1130",
+                                        "type": "CategoricalScale"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1152"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1153"
+                                            },
+                                            "ticker": {
+                                                "id": "1138"
+                                            }
+                                        },
+                                        "id": "1137",
+                                        "type": "LinearAxis"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "source": {
+                                                "id": "1122"
+                                            }
+                                        },
+                                        "id": "1149",
+                                        "type": "CDSView"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "data": {
+                                                "color": [
+                                                    "#3288bd",
+                                                    "#99d594",
+                                                    "#e6f598",
+                                                    "#fee08b",
+                                                    "#fc8d59",
+                                                    "#d53e4f"
+                                                ],
+                                                "e": [
+                                                    8,
+                                                    2,
+                                                    5
+                                                ],
+                                                "e1": [
+                                                    "HTML/CSS",
+                                                    "MySQL",
+                                                    "SPRINGBOOT"
+                                                ]
+                                            },
+                                            "selected": {
+                                                "id": "1158"
+                                            },
+                                            "selection_policy": {
+                                                "id": "1157"
+                                            }
+                                        },
+                                        "id": "1122",
+                                        "type": "ColumnDataSource"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1134"
+                                            },
+                                            "coordinates": null,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1136",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "data_source": {
+                                                "id": "1122"
+                                            },
+                                            "glyph": {
+                                                "id": "1145"
+                                            },
+                                            "group": null,
+                                            "hover_glyph": null,
+                                            "muted_glyph": {
+                                                "id": "1147"
+                                            },
+                                            "nonselection_glyph": {
+                                                "id": "1146"
+                                            },
+                                            "view": {
+                                                "id": "1149"
+                                            }
+                                        },
+                                        "id": "1148",
+                                        "type": "GlyphRenderer"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1137"
+                                            },
+                                            "coordinates": null,
+                                            "dimension": 1,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1140",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1156",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1138",
+                                        "type": "BasicTicker"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "e"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "e1"
+                                            }
+                                        },
+                                        "id": "1145",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1152",
+                                        "type": "BasicTickFormatter"
+                                    }
+                                ],
+                                "root_ids": [
+                                    "1123"
+                                ]
+                            },
+                            "title": "Bokeh Application",
+                            "version": "2.4.0"
+                        }
+                    }';
+                const render_items = [
+                        {
+                            "docid": "834c3420-9986-491b-9a22-5a78809ac9fa",
+                            "root_ids": [
+                                "1123"
+                            ],
+                            "roots": {
+                                "1123": "b3cc37ea-00a4-4f82-860e-b83cbc4103d4"
+                            }
+                        }
+                    ];
+                root.Bokeh.embed.embed_items(docs_json, render_items);
+                }
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  let attempts = 0;
+                  const timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      clearInterval(timer);
+                      embed_document(root);
+                        } else {
+                      attempts++;
+                      if (attempts > 100) {
+                        clearInterval(timer);
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                            }
+                        }
+                    },
+                    10, root)
+                }
+            })(window);
+        });
+    };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+})();
+</script>
+            
+<div class="bk-root" id="b3cc37ea-00a4-4f82-860e-b83cbc4103d4" data-root-id="1123"></div>
+    </div>
+
+
+</div>
+
+<div style="margin-top: 70px; padding: 30px; flex-direction: row;">
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+        <!-- <p style="font-size: 25px; font-family: 'Times New Roman', Times, serif;font-style: unset;text-align: left;"> -->
+            <!-- This chart contain spendHours of each trainee on course</p>  -->
+        
+<script type="text/javascript">
+    (function() {
+          const fn = function() {
+            Bokeh.safely(function() {
+              (function(root) {
+                function embed_document(root) {
+                  
+                const docs_json = '{
+                        "5c506b70-711f-410d-9561-20ac95d8f637": {
+                            "defs": [],
+                            "roots": {
+                                "references": [
+                                    {
+                                        "attributes": {},
+                                        "id": "1171",
+                                        "type": "LinearScale"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1195",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1196",
+                                        "type": "UnionRenderers"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "text": "noOfTasks by courses by Vamshi"
+                                        },
+                                        "id": "1163",
+                                        "type": "Title"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1197",
+                                        "type": "Selection"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1194"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1195"
+                                            },
+                                            "ticker": {
+                                                "id": "1174"
+                                            }
+                                        },
+                                        "id": "1173",
+                                        "type": "CategoricalAxis"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1192",
+                                        "type": "AllLabels"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1174",
+                                        "type": "CategoricalTicker"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "below": [
+                                                {
+                                                    "id": "1173"
+                                                }
+                                            ],
+                                            "center": [
+                                                {
+                                                    "id": "1175"
+                                                },
+                                                {
+                                                    "id": "1179"
+                                                },
+                                                {
+                                                    "id": "1198"
+                                                }
+                                            ],
+                                            "height": 630,
+                                            "left": [
+                                                {
+                                                    "id": "1176"
+                                                }
+                                            ],
+                                            "renderers": [
+                                                {
+                                                    "id": "1187"
+                                                }
+                                            ],
+                                            "title": {
+                                                "id": "1163"
+                                            },
+                                            "toolbar": {
+                                                "id": "1181"
+                                            },
+                                            "toolbar_location": null,
+                                            "width": 550,
+                                            "x_range": {
+                                                "id": "1165"
+                                            },
+                                            "x_scale": {
+                                                "id": "1169"
+                                            },
+                                            "y_range": {
+                                                "id": "1167"
+                                            },
+                                            "y_scale": {
+                                                "id": "1171"
+                                            }
+                                        },
+                                        "id": "1162",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "tools": [
+                                                {
+                                                    "id": "1180"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1181",
+                                        "type": "Toolbar"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1169",
+                                        "type": "CategoricalScale"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "data_source": {
+                                                "id": "1161"
+                                            },
+                                            "glyph": {
+                                                "id": "1184"
+                                            },
+                                            "group": null,
+                                            "hover_glyph": null,
+                                            "muted_glyph": {
+                                                "id": "1186"
+                                            },
+                                            "nonselection_glyph": {
+                                                "id": "1185"
+                                            },
+                                            "view": {
+                                                "id": "1188"
+                                            }
+                                        },
+                                        "id": "1187",
+                                        "type": "GlyphRenderer"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "data": {
+                                                "color": [
+                                                    "#3182bd",
+                                                    "#6baed6",
+                                                    "#9ecae1",
+                                                    "#c6dbef",
+                                                    "#e6550d",
+                                                    "#fd8d3c",
+                                                    "#fdae6b"
+                                                ],
+                                                "l13": [
+                                                    "HTML&amp;CSS",
+                                                    "JAVA",
+                                                    "Maven ",
+                                                    "MySql",
+                                                    "Spring",
+                                                    "SpringBoot",
+                                                    "maven"
+                                                ],
+                                                "l14": [
+                                                    8,
+                                                    26,
+                                                    5,
+                                                    6,
+                                                    3,
+                                                    3,
+                                                    2
+                                                ]
+                                            },
+                                            "selected": {
+                                                "id": "1197"
+                                            },
+                                            "selection_policy": {
+                                                "id": "1196"
+                                            }
+                                        },
+                                        "id": "1161",
+                                        "type": "ColumnDataSource"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "formatter": {
+                                                "id": "1191"
+                                            },
+                                            "group": null,
+                                            "major_label_policy": {
+                                                "id": "1192"
+                                            },
+                                            "ticker": {
+                                                "id": "1177"
+                                            }
+                                        },
+                                        "id": "1176",
+                                        "type": "LinearAxis"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1191",
+                                        "type": "BasicTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1173"
+                                            },
+                                            "coordinates": null,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1175",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "coordinates": null,
+                                            "group": null,
+                                            "items": [
+                                                {
+                                                    "id": "1199"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1198",
+                                        "type": "Legend"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "axis": {
+                                                "id": "1176"
+                                            },
+                                            "coordinates": null,
+                                            "dimension": 1,
+                                            "group": null,
+                                            "ticker": null
+                                        },
+                                        "id": "1179",
+                                        "type": "Grid"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1177",
+                                        "type": "BasicTicker"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1194",
+                                        "type": "CategoricalTickFormatter"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.2
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "l14"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "l13"
+                                            }
+                                        },
+                                        "id": "1186",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_alpha": {
+                                                "value": 0.1
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "l14"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "l13"
+                                            }
+                                        },
+                                        "id": "1185",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "fill_color": {
+                                                "field": "color"
+                                            },
+                                            "hatch_color": {
+                                                "field": "color"
+                                            },
+                                            "line_color": {
+                                                "field": "color"
+                                            },
+                                            "top": {
+                                                "field": "l14"
+                                            },
+                                            "width": {
+                                                "value": 0.6
+                                            },
+                                            "x": {
+                                                "field": "l13"
+                                            }
+                                        },
+                                        "id": "1184",
+                                        "type": "VBar"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "callback": null,
+                                            "tooltips": "@l13: @l14 Tasks"
+                                        },
+                                        "id": "1180",
+                                        "type": "HoverTool"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "source": {
+                                                "id": "1161"
+                                            }
+                                        },
+                                        "id": "1188",
+                                        "type": "CDSView"
+                                    },
+                                    {
+                                        "attributes": {},
+                                        "id": "1167",
+                                        "type": "DataRange1d"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "factors": [
+                                                "HTML&amp;CSS",
+                                                "JAVA",
+                                                "Maven ",
+                                                "MySql",
+                                                "Spring",
+                                                "SpringBoot",
+                                                "maven"
+                                            ]
+                                        },
+                                        "id": "1165",
+                                        "type": "FactorRange"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "label": {
+                                                "field": "l13"
+                                            },
+                                            "renderers": [
+                                                {
+                                                    "id": "1187"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1199",
+                                        "type": "LegendItem"
+                                    }
+                                ],
+                                "root_ids": [
+                                    "1162"
+                                ]
+                            },
+                            "title": "Bokeh Application",
+                            "version": "2.4.0"
+                        }
+                    }';
+                const render_items = [
+                        {
+                            "docid": "5c506b70-711f-410d-9561-20ac95d8f637",
+                            "root_ids": [
+                                "1162"
+                            ],
+                            "roots": {
+                                "1162": "dd7bfe65-67d7-40f8-89ec-0bb130bd27ee"
+                            }
+                        }
+                    ];
+                root.Bokeh.embed.embed_items(docs_json, render_items);
+                }
+                if (root.Bokeh !== undefined) {
+                  embed_document(root);
+                } else {
+                  let attempts = 0;
+                  const timer = setInterval(function(root) {
+                    if (root.Bokeh !== undefined) {
+                      clearInterval(timer);
+                      embed_document(root);
+                        } else {
+                      attempts++;
+                      if (attempts > 100) {
+                        clearInterval(timer);
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                            }
+                        }
+                    },
+                    10, root)
+                }
+            })(window);
+        });
+    };
+          if (document.readyState != "loading") fn();
+          else document.addEventListener("DOMContentLoaded", fn);
+})();
+</script>
+        
+<div class="bk-root" id="dd7bfe65-67d7-40f8-89ec-0bb130bd27ee" data-root-id="1162"></div>
+    </div>
+
+
+
+            </div>        
+    </body>
