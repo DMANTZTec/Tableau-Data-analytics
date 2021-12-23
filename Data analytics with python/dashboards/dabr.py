@@ -9,7 +9,7 @@ def plot():
     from bokeh.palettes import Category20c
     from bokeh.transform import cumsum
     import pandas as pd
-    from bokeh.plotting import figure
+#     from bokeh.plotting import figure
     from bokeh.models import ColumnDataSource
     from bokeh.palettes import Spectral6
     from bokeh.plotting import figure, show, output_file
