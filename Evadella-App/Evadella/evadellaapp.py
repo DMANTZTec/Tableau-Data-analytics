@@ -5,14 +5,12 @@ import numpy as np
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit_authenticator as stauth
+from streamlit import session_state as state
 import mysql.connector
-# import matplotlib.pyplot as plt
 from evadella_mysql import *
 import plotly.express as px
+from evadellalogin import * 
 
-
-
-# page configuration
 st.set_page_config(
     page_title="EvaDella App",
     page_icon="🧊",
@@ -20,16 +18,14 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-
 # user authentication
 names = ["Giridhar", "Yerra"]
 usernames = ["evadellagiri", "evadellayerra"]
 
-
 file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as file:
     hashed_passwords = pickle.load(file)
-    
+
     credentials = {
         "usernames":{
             usernames[0]:{
@@ -42,85 +38,42 @@ with file_path.open("rb") as file:
                 }            
             }
         }
-    
 
 authenticator = stauth.Authenticate(credentials,
-        "dashborad", "abcdefg", cookie_expiry_days = 30)
+    "dashborad", "abcdefg", cookie_expiry_days = 30)
 
 name, authentication_status, username = authenticator.login("login", "main")
 
-# if authentication_status == False:
-#     st.error("Username/Password is incorrect")
-
 if authentication_status == False:
-    st.error("Please enter your correct Username/Password")
+    st.error("Username/Password is incorrect")
 
-# if [authentication_status, name, username] not in st.session_state:
-#     st.session_state[authentication_status, name, username] = 0
+if authentication_status: 
+    state.authentication_status = True
 
-# name, authentication_status, username = authenticator.login("login", "main")
-
-if authentication_status:
     page = st.sidebar.selectbox("Select a page", ["evadellaapp.py","evadellaapprawdata.py"])
-
 
     # Navigation Bar
     if page == "evadellaapp.py":
-    # st.session_state[authentication_status, name, username] = authentication_status, name, username
         st.title(':smile: EvaDella App Dashboard')
 
         authenticator.logout("logout")
 
         # Navigation Bar
         selected = option_menu(
-            # authenticator.logout("logout"),
             menu_title = None,
-            options = ["Effective Dashboard", "Normal Dashboard"],
-            icons = ["house", "book"],
+            options = ["Operations", "Sales", "Inventory"],
+            icons = ["house", "book", ""],
             orientation = "horizontal",
         )
 
-        if selected == "Effective Dashboard":
+        if selected == "Operations":
 
-        # css applied
-            with open('C:/Users/ADMIN_2/Python_Giridhar/App Analytics/Analytics/Evadella app/Evadella/style.css') as f:
+            # css applied
+            with open('C:/Users/ADMIN_2/Python_Giridhar/App Analytics/Analytics/databasestreamlit/Task/static/style.css') as f:
                 st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
-        
-        # columns for partition
-            col1, col2, col3, col4 = st.columns(4)
-
-
-            with col1:
-                st.subheader("Total No Of Orders")
-                ordersDf = pd.read_sql(ordersCount, mydb)
-                totalOrders = sum(ordersDf['No Of Orders'])
-                st.metric("", "")
-                st.markdown('<a href="http://localhost:8501/evadellaapprawdata" target="_self" >' + str(totalOrders) +'</a>',unsafe_allow_html = True)
-                # test = st.checkbox('click')
-                # test
-
-
-            with col3:
-                st.metric(st.text_input(''),  value='')
-
-
-            with col2:
-                st.subheader("Total Amount")
-                ordersTable = pd.read_sql_query(getOrdersDf, mydb)
-                totalAmount = sum(ordersTable['total_amount'])
-
-                st.metric("", totalAmount, '0%')
-
-
-            with col4:
-                st.subheader("Number of sales")
-                st.metric("", "25%", "-8%")
-
-
-        # columns for partition
+            # columns for partition
             col5, col6 = st.columns(2)
-
 
             with col5:
 
@@ -135,25 +88,77 @@ if authentication_status:
                 dfOrderCountByStatus = (pd.DataFrame(orderCountByStatusFinalDf)).reset_index()
                 dfOrderCountByStatus.columns.values[0] = "Order Submit Date"
 
-
                 st.table(dfOrderCountByStatus)
 
             with col6:
 
+                st.subheader("Today Orders/Average Orders - Count/Amount")
+
+                todayOrdersDetailsDf = pd.read_sql_query(todayOrdersDetails, mydb)
+                convert_dict = {'Count': int, 'Amount' :int}
+                todayOrdersDetailsDf = todayOrdersDetailsDf.astype(convert_dict)
+                todayOrdersDetailsDf.iloc[0, 0] = 'Today Orders'
+                todayOrdersDetailsDf['Orders'] = todayOrdersDetailsDf['Date'].astype(str)
+                todayOrdersDetailsDf = todayOrdersDetailsDf.drop('Date', axis=1)
+
+                averageOrdersBy30DaysDf = pd.read_sql_query(averageOrdersBy30Days, mydb)
+                convert_dict = {'Count': int, 'Amount' :int}
+                averageOrdersBy30DaysDf = averageOrdersBy30DaysDf.astype(convert_dict)
+                averageOrdersBy30DaysDf.iloc[0, 0] = 'Daily Average Orders'
+                averageOrdersBy30DaysDf['Orders'] = averageOrdersBy30DaysDf['Date'].astype(str)
+                averageOrdersBy30DaysDf = averageOrdersBy30DaysDf.drop('Date', axis=1)
+
+                todayOrdersAverageOrdersDF = (pd.concat([todayOrdersDetailsDf, averageOrdersBy30DaysDf]).reset_index())
+                todayOrdersAverageOrdersDF = todayOrdersAverageOrdersDF.drop('index', axis=1)
+                firstcolumn = todayOrdersAverageOrdersDF.pop('Orders')
+                todayOrdersAverageOrdersDF.insert(0, 'Orders', firstcolumn)
+
+                st.table(todayOrdersAverageOrdersDF)
+
+        if selected == "Sales":
+
+            # css applied
+            with open('C:/Users/ADMIN_2/Python_Giridhar/App Analytics/Analytics/databasestreamlit/Task/static/style.css') as f:
+                st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
+
+            # columns for partition
+            col1, col2, col3, col4 = st.columns(4)
+
+            with col1:
+                st.subheader("Total No Of Orders")
+                ordersDf = pd.read_sql(ordersCount, mydb)
+                totalOrders = sum(ordersDf['No Of Orders'])
+                st.metric("", "")
+                st.markdown('<a href="http://localhost:8501/evadellaapprawdata" target="_self" >' + str(totalOrders) +'</a>',unsafe_allow_html = True)
+
+            with col2:
+                st.metric(st.text_input(''),  value='')
+
+            with col3:
+                st.subheader("Total Amount")
+                ordersTable = pd.read_sql_query(getOrdersDf, mydb)
+                totalAmount = sum(ordersTable['total_amount'])
+
+                st.metric("", totalAmount, '0%')
+
+            with col4:
+                st.subheader("Number of sales")
+                st.metric("", "25%", "-8%")
+
+            # columns for partition
+            col10, col11 = st.columns(2)
+
+            with col10:
                 st.subheader("Orders Count By Coupon Applied")
 
                 ordersCountByCouponDf = pd.read_sql_query(ordersCountByCoupon, mydb)
                 optionSelect = st.multiselect("Coupon Applied", options= ordersCountByCouponDf['coupon_applied'].unique(), 
                                             default = ordersCountByCouponDf['coupon_applied'].unique())
-                # st.table(ordersCountByCouponDf)
-                # optionSelect = st.selectbox("Coupon Applied", options= ordersCountByCouponDf['coupon_applied']) # coupon_filter = st.selectbox("Select the status", pd.unique(ordersCountByCouponDf("coupon_applied")))
                 appliedCoupon = ordersCountByCouponDf.query("coupon_applied == @optionSelect")
-
 
                 st.table(appliedCoupon)
 
-
-        # columns for partition
+            # columns for partition
             col7, col8, col9 = st.columns(3)
 
             with col7:
@@ -174,10 +179,10 @@ if authentication_status:
 
                 st.table(ordersCountByTotalAmountDf)
 
-
-
             with col8:
                 st.subheader('Orders Count By Month, By Year')
+
+                ordersDf = pd.read_sql(ordersCount, mydb)
 
                 totalOrderCount =ordersDf[['Year', 'Month Name', 'No Of Orders']]
                 totalOrderCountDf = totalOrderCount.pivot_table(index = 'Month Name', columns = 'Year', values='No Of Orders', aggfunc = 'sum')
@@ -186,14 +191,12 @@ if authentication_status:
 
                 st.table(totalOrderCountDf)
 
-
-            
             with col9:
                 st.subheader('No Of Orders By Year')
 
                 ordersDf = pd.read_sql(ordersCount, mydb)
 
-                def noOfOrders():
+                def noOfOrders():   
                     noOfOrdersDf = (ordersDf.groupby(['Year'])['No Of Orders'].sum()).reset_index()
                     return noOfOrdersDf
 
@@ -205,10 +208,7 @@ if authentication_status:
 
                 st.bar_chart(ordersByYearDf, x='Year', y='No Of Orders')
 
-
-
-
-        # pie chart
+            # pie chart
             st.subheader("Last 30days Orders Count")
 
             ordersLastMonthCountDf = pd.read_sql(ordersLastMonthCount, mydb)

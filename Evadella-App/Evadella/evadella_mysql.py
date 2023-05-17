@@ -1,5 +1,7 @@
 import mysql.connector
 
+# @st.cache(hash_funcs={_mysql_connector.MySQL: my_hash_func})
+
 mydb = mysql.connector.connect(
     host = "localhost",
     user = "root",
@@ -10,6 +12,12 @@ mydb = mysql.connector.connect(
 getOrderStatusDf = "SELECT * FROM ecomm.order_status"
 
 getOrdersDf = "SELECT * FROM ecomm.orders"
+
+# todayOrdersDetails = "SELECT DATE(order_submit_dt_tm) as 'Date', order_id, total_amount FROM ecomm.orders WHERE DATE(order_submit_dt_tm) = CURDATE()"
+
+todayOrdersDetails = "SELECT DATE(order_submit_dt_tm) as 'Date', ROUND(COUNT(order_id)) as 'Count', ROUND(SUM(IFNULL(total_amount, 0))) as 'Amount' FROM ecomm.orders WHERE DATE(order_submit_dt_tm) = CURDATE()"
+
+averageOrdersBy30Days = "SELECT DATE(order_submit_dt_tm) as 'Date', ROUND(COUNT(order_id)/COUNT(DISTINCT DATE(order_submit_dt_tm))) as 'Count', ROUND(AVG(total_amount)) as 'Amount' FROM ecomm.orders WHERE DATE(order_submit_dt_tm) >= (CURDATE()- INTERVAL 1 MONTH)"
 
 orderCountByStatus = "SELECT DATE(order_track_update_time) as 'Date', status_cd, order_id FROM ecomm.order_status WHERE order_status.order_track_update_time != 0"
 
